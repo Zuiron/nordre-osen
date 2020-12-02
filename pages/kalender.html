@@ -1,0 +1,183 @@
+<script>document.getElementById('kalender').setAttribute('class', 'active');</script>
+<div class="container marketing sitecontainer">
+
+    <ol class="breadcrumb breadmargin">
+        <li><a href="/">Hjem</a></li>
+        <li class="active">Kalender</li>
+    </ol>
+
+<script src="../assets/apps/responsive-calendar/0.9/js/responsive-calendar.js"></script>
+<link href="../assets/apps/responsive-calendar/0.9/css/responsive-calendar.css" rel="stylesheet" media="screen">
+
+<h1><i class="fa fa-calendar fa-lg" aria-hidden="true"></i> Kalender.</h1>
+<p>Her finner man fort ut hva som skjer når og hvor, Bare trykk på datoer merket med blå bakgrunn!</p>
+<p class="lead">
+
+
+<!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+   <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="modal-title" class="modal-title">Modal Header</h4>
+            </div>
+            <div id="modal-body" class="modal-body text-center">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+  <!-- Responsive calendar - START -->
+  <div class="responsive-calendar">
+    <div class="controls">
+        <a class="pull-left" data-go="prev"><div class="btn"><i class="fa fa-arrow-left fa-3x calgrey" aria-hidden="true"></i></div></a>
+        <h4><span data-head-month></span> <span data-head-year></span></h4>
+        <a class="pull-right" data-go="next"><div class="btn"><i class="fa fa-arrow-right fa-3x calgrey" aria-hidden="true"></i></div></a>
+    </div><br><hr/>
+    <div class="day-headers">
+        <div class="day header">Man</div>
+        <div class="day header">Tir</div>
+        <div class="day header">Ons</div>
+        <div class="day header">Tor</div>
+        <div class="day header">Fre</div>
+        <div class="day header">Lør</div>
+        <div class="day header">Søn</div>
+    </div>
+    <div class="days" data-group="days">
+        <!-- the place where days will be generated -->
+    </div>
+  </div>
+<!-- Responsive calendar - END -->
+
+<script>
+$( document ).ready( function() {
+    function addLeadingZero(num) {
+        if (num < 10) {
+        return "0" + num;
+        } else {
+        return "" + num;
+        }
+    }
+
+  $(".responsive-calendar").responsiveCalendar({
+    //time: '2013-05',
+    monthChangeAnimation: false,
+    translateMonths: ['Januar', 'Februar', 'Mars', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Desember'],
+    events: { //yyyy-mm-dd
+      "2016-05-14": {
+          "number": 1, "badgeClass": "badge-warning", "title": "14 Mai, 2016",
+          "body": "<h3>Amcar & Veterantreff</h3><br><a class='btn btn-danger' href='/amcar' role='button'>Trykk her for å lese mer. &raquo;</a>"
+        },
+      "2016-05-17": {
+          "number": 1, "badgeClass": "badge-error", "title": "17 Mai, 2016",
+          "body": "<h3>17 Mai Feiring Nordre Osen 2016</h3> <br><a class='btn btn-danger' href='/17mai' role='button'>Trykk her for å lese mer. &raquo;</a>"
+        },
+        "2016-06-14": {
+          "number": 1, "badgeClass": "badge-warning", "title": "14-19 Juni",
+          "body": "<h3>Fløterfestivalen 2016</h3> <br><a class='btn btn-danger' href='/floterfestivalen' role='button'>Trykk her for å lese mer. &raquo;</a>"
+        },
+        "2016-06-15": {
+          "number": 1, "badgeClass": "badge-warning", "title": "14-19 Juni",
+          "body": "<h3>Fløterfestivalen 2016</h3> <br><a class='btn btn-danger' href='/floterfestivalen' role='button'>Trykk her for å lese mer. &raquo;</a>"
+        },
+        "2016-06-16": {
+          "number": 1, "badgeClass": "badge-warning", "title": "14-19 Juni",
+          "body": "<h3>Fløterfestivalen 2016</h3> <br><a class='btn btn-danger' href='/floterfestivalen' role='button'>Trykk her for å lese mer. &raquo;</a>"
+        },
+        "2016-06-17": {
+          "number": 2, "badgeClass": "badge-error", "title": "14-19 Juni",
+          "body": "<h3>Fløterfestivalen 2016</h3> <br><a class='btn btn-danger' href='/floterfestivalen' role='button'>Trykk her for å lese mer. &raquo;</a>"
+          +"<br><br><hr>"
+          +"<h3>Pubaften Fløterfestivalen 2016</h3>Osensjøen Adventure. <br><br><a class='btn btn-primary' href='https://www.facebook.com/events/1692720434310933/' target='_blank' role='button'>Les mer på Facebook &raquo;</a>"
+        },
+        "2016-06-18": {
+          "number": 2, "badgeClass": "badge-error", "title": "14-19 Juni",
+          "body": "<h3>Fløterfestivalen 2016</h3> <br><a class='btn btn-danger' href='/floterfestivalen' role='button'>Trykk her for å lese mer. &raquo;</a>"
+          +"<br><br><hr>"
+          +"<h3>Pubaften Fløterfestivalen 2016</h3>Osensjøen Adventure. <br><br><a class='btn btn-primary' href='https://www.facebook.com/events/1068565153166569/' target='_blank' role='button'>Les mer på Facebook &raquo;</a>"
+        },
+        "2016-06-19": {
+          "number": 1, "badgeClass": "badge-warning", "title": "14-19 Juni",
+          "body": "<h3>Fløterfestivalen 2016</h3> <br><a class='btn btn-danger' href='/floterfestivalen' role='button'>Trykk her for å lese mer. &raquo;</a>"
+        },
+        "2016-07-29": {
+          "number": 2, "badgeClass": "badge-error", "title": "29-31 Juli",
+          "body": "<h3>Osendagene</h3>Hvert år siste helga i juli. <br><br><a class='btn btn-danger' href='/osendagene' role='button'>Trykk her for å lese mer. &raquo;</a>"
+          +"<br><br><hr>"
+          +"<h3>Latterkveld med Bjørn Kleiven og Viggo Sandvik</h3>Osensjøen Adventure. <br><br><a class='btn btn-primary' href='https://www.facebook.com/events/203826970000651/' target='_blank' role='button'>Les mer på Facebook &raquo;</a>"
+        },
+        "2016-07-30": {
+          "number": 1, "badgeClass": "badge-warning", "title": "29-31 Juli",
+          "body": "<h3>Osendagene</h3>Hvert år siste helga i juli. <br><br><a class='btn btn-danger' href='/osendagene' role='button'>Trykk her for å lese mer. &raquo;</a>"
+        },
+        "2016-07-31": {
+          "number": 1, "badgeClass": "badge-warning", "title": "29-31 Juli",
+          "body": "<h3>Osendagene</h3>Hvert år siste helga i juli. <br><br><a class='btn btn-danger' href='/osendagene' role='button'>Trykk her for å lese mer. &raquo;</a>"
+        },
+		"2016-11-26": {
+          "number": 1, "badgeClass": "badge-warning", "title": "Osvang 26 November",
+          "body": "Julemesse og julebasar i Osvang 26 november fra klokka 11- 16. Der kan du ta julebaksten og kjøpe julegavene. Det er mange utstillere Iår som i fjor og de har forskjellige ting og selge. Så har Osvang basar, vi tar fortsatt imot gevinster. De kan legges inn på jokern. Slemdalen og Osen helselag har også utloddningen. De har også middagsservering med juletallerken og multekrem til dessert. Alle er hjertelig velkommen!"
+        },
+		"2016-12-09": {
+          "number": 1, "badgeClass": "badge-warning", "title": "Årsmøte Osen Skytterlag",
+          "body": "Vanlige årsmøtesaker. Premieutdeling fra klubbmesterskapet 2016. Enkel bevertning. <br><br> Frister: <br> Frasigelse av verv: 28 Nov til Lars Jota. <br> Saker til årsmøte: 28 Nov. Sendes skriftlig til Osen Skytterlag v/ Arnt-Steinar Buen, Slemdalsveien 1384. 2460 Osen."
+        },
+		"2016-12-10": {
+          "number": 1, "badgeClass": "badge-error", "title": "Velferdens Julebord, Osvang.",
+          "body": "10 Des kl 17:00, Osvang. <br> Det blir tradisjonell julemat og underholdning. <br><br> Både medlemmer og ikke medlemmer kan melde seg til Ella 96225050 eller Victor 91335851 innen 5 Desember."
+        },
+		"2016-12-29": {
+          "number": 1, "badgeClass": "badge-error", "title": "Juletrefest i Osvang.",
+          "body": "Tradisjonen tro, blir det juletrefest i Osvang <br> 5 dag jul kl 16:00 - 19:00. <br><br> Det blir gang rundt juletreet, bevertning og loddsalg.<br>Og så kommer nok nissen på besøk også.<br><br>Det serveres pølser og brus til barna, og<br>kaffe og kaker til de voksne.<br><br>Inngang voksne kr 100,-<br>gratis inngang for barn under 15 år.<br><br>Velkommen til en hyggelig kveld <br> for både store og små!"
+        },
+        "2017-06-03": {
+              "number": 1, "badgeClass": "badge-error", "title": "Amcar & Veterantreff.",
+              "body": "<h3>Amcar & Veterantreff</h3>3 Juni kl 14:00. <br><br><a class='btn btn-danger' href='/amcar17' role='button'>Trykk her for å lese mer. &raquo;</a>"
+            }
+    }, //events close
+    onActiveDayClick: function(events) {
+      var thisDayEvent, key;
+
+      key = $(this).data('year')+'-'+addLeadingZero( $(this).data('month') )+'-'+addLeadingZero( $(this).data('day') );
+      thisDayEvent = events[key];
+        //do something
+        //alert(thisDayEvent.bajs);
+        $("#myModal").modal(); //activate modal window...
+        document.getElementById("modal-title").innerHTML = thisDayEvent.title;
+        document.getElementById("modal-body").innerHTML = thisDayEvent.body;
+    }
+  });
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if(dd<10) {
+        dd='0'+dd
+    }
+
+    if(mm<10) {
+        mm='0'+mm
+    }
+
+    today = yyyy+'-'+mm+'-'+dd;
+
+  var options = {};
+  options[today] = { "bajs": "ssddd" };
+  //$('.responsive-calendar').responsiveCalendar('edit', options); //adds event "today"
+
+
+});
+</script>
+
+</p>
